@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Portfolio{% endblock %}
+
+{% block content %}
+    <!-- About Section -->
+    <section id="about" class="container">
+        <div class="about">
+            <div class="about-image">
+                <img src="/static/longhair.jpg" alt="Profile Picture">
+            </div>
+            <div class="about-description">
+                <h2>About Me</h2>
+                <p>As an aspiring IT student, I am deeply passionate about web development, AI, IoT, and software engineering. I am fascinated by the potential of these fields to drive innovation and solve complex problems. Through mastering programming languages and exploring emerging technologies, I aspire to create impactful solutions that improve efficiency and enhance user experiences. With a relentless commitment to learning and growth, I am dedicated to making meaningful contributions to the ever-evolving landscape of technology.</p>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience">
+            <h2>Experience & Qualifications</h2>
+            <ul>
+                {% for experience in experiences %}
+                    <li><strong>{{ experience.title }}</strong><br>{{ experience.description }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- End Experience Section -->
+    </section>
+    <!-- End About Section -->
+{% endblock %}

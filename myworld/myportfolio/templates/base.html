@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Include font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header">
+                <div class="brand">
+                    <h1>DORJI WANGCHUK</h1>
+                </div>
+                <!-- Show hamburger menu only on smaller screens -->
+                <div class="hamburger" id="hamburger">
+                    <p>Menu</p>
+                </div>
+                <!-- Navigation list for larger screens -->
+                <nav class="nav-list">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'projects' %}">Projects</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+      <!-- End Main Content -->
+  
+      <!-- Footer -->
+      <footer id="footer">
+          <div class="container">
+              <div class="footer">
+                  <div class="social-icon">
+                      <!-- LinkedIn -->
+                      <a href="https://www.linkedin.com/" class="social-item"><i class="fab fa-linkedin"></i></a>
+                      <!-- Gmail -->
+                      <a href="mailto:yourname@gmail.com" class="social-item"><i class="far fa-envelope"></i></a>
+                      <!-- Facebook -->
+                      <a href="https://www.facebook.com/" class="social-item"><i class="fab fa-facebook"></i></a>
+                  </div>
+                  <div class="footer-info">
+                      <p class="footer-address">Web Developement Using Django Frame Work</p>
+                      <p class="footer-copyright">&copy; 2024|| DORJI WANGCHUK. All rights reserved.</p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- End Footer -->
+  
+      <!-- JavaScript for Hamburger Menu -->
+      <script>
+          const hamburger = document.getElementById('hamburger');
+          const navList = document.querySelector('.nav-list ul');
+  
+          hamburger.addEventListener('click', () => {
+              navList.classList.toggle('active');
+          });
+      </script>
+  </body>
+  </html>
+  
